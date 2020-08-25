@@ -1,6 +1,5 @@
 import json
 import torch
-import pandas as pd
 from typing import List
 from translator import Translator
 from fastapi import FastAPI, Query

@@ -23,26 +23,37 @@ Process finished with exit code 0
 
 All models are stored in /trained_models/
 New models can be saved in that directory, and update translator_config.json accordingly.
-## Examples
-### library calls
-```python
-from translator import Translator
-
-
-if __name__ == '__main__':
-    # heb -> arb
-    translator = Translator("heb","arb")
-    seq = ["שלום לכולם", "ארבעים ושתיים", "ארבעים וחמש"]
-
-    result = translator.translate(seq)
+## Building & Running 
+### Docker
+#### build: 
+```bash
+sudo docker build . -t translation_image
 ```
+#### run:
+with gpu:
+```bash
+sudo nvidia-docker run -p 8000:80 translation_image
+```
+without gpu:
+```bash
+sudo docker run -p 8000:80 translation_image
+```
+access via ```localhost:8000/docs```
+
+### Uvicorn
+```uvicorn api:app --reload --host 0.0.0.0 --port 8000```
+
+
+## Usage
+using the translator service can be done by installing the dedicated client class, or accessing the RESTful API directly.
 ### Client Class
+for client class installations, see: gitlab_translator_client.git
 ```python
 from translation_client import TranslatorClient
 
 
 if __name__ == '__main__':
-    service_url = "http://0.0.0.0:80"
+    service_url = "http://0.0.0.0:8000"
     tc = TranslatorClient("heb", "arb", service_url)
     query1 = "שלום לכם, ילדים וילדות"
     query2 = [
@@ -76,22 +87,6 @@ if __name__ == '__main__':
     response = requests.get(URL, params=request).json()
 ```
 
-
-## Docker
-### build: 
-```bash
-sudo docker build . -t translation_image
-```
-### run:
-with gpu:
-```bash
-sudo nvidia-docker run -p 8000:80 translation_image
-```
-without gpu:
-```bash
-sudo docker run -p 8000:80 translation_image
-```
-access via ```localhost:80/docs```
 
 ##TODO
 - wrap AugmenText so it will work with the API
