@@ -6,7 +6,6 @@ import pandas as pd
 from transformers import AutoTokenizer, AutoModelWithLMHead
 from uvicorn.config import logger as api_logger
 
-
 '''
     timing decorator
 '''
@@ -24,7 +23,7 @@ SPECIAL_CASE_TGT_MAP = {
     "he": "heb",
     "ara": "arb",
     "ar": "arb",
-    "en": "eng"
+    "en": "eng",
 }
 
 class Translator():
@@ -50,8 +49,7 @@ class Translator():
             pretrained_model = languages_dict[self.source_lang][self.target_lang]["model_name"]
             special_token = languages_dict[self.source_lang][self.target_lang]["special_tok"]
         except:
-            raise NotImplementedError
-
+            raise NotImplementedError(f"translation {self.source_lang}->{self.target_lang} not available")
 
         trained_model_path = os.path.join("trained_models", pretrained_model)
         self.special_tok = special_token
@@ -61,7 +59,9 @@ class Translator():
 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         api_logger.info(f"inference device: {self.device}")
-        self.model : AutoModelWithLMHead = AutoModelWithLMHead.from_pretrained(trained_model_path)
+
+        self.trained_model_path = trained_model_path
+        self.model : AutoModelWithLMHead = AutoModelWithLMHead.from_pretrained(self.trained_model_path)
 
         if self.special_tokens is not None:
             spec_dict = {"additional_special_tokens": self.special_tokens}
@@ -147,6 +147,17 @@ class Translator():
         cur_translation_df["tgt_text"] = after_translations
         return cur_translation_df
 
+    def free_model_mem(self):
+        del self.model
+        self.model = None
+        torch.cuda.empty_cache()
+        api_logger.info(f"freed model {self.trained_model_path} from gpu memory.")
+
+    def load_model_to_gpu(self):
+        if self.model is None:
+            torch.cuda.empty_cache()
+            self.model: AutoModelWithLMHead = AutoModelWithLMHead.from_pretrained(self.trained_model_path)
+            api_logger.info(f"loaded model {self.trained_model_path} to gpu memory.")
 
 
 

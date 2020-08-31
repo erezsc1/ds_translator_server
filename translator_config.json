@@ -1,193 +1,193 @@
 {
     "arb": {
         "de": {
-            "model_name": "Helsinki_NLP_opus_mt_ar_de",
+            "model_name": "Helsinki_NLP_opus_mt_arb_de",
             "special_tok": "de"
         },
         "el": {
-            "model_name": "Helsinki_NLP_opus_mt_ar_el",
+            "model_name": "Helsinki_NLP_opus_mt_arb_el",
             "special_tok": "el"
         },
         "eng": {
-            "model_name": "Helsinki_NLP_opus_mt_ar_en",
+            "model_name": "Helsinki_NLP_opus_mt_arb_en",
             "special_tok": "en"
         },
         "eo": {
-            "model_name": "Helsinki_NLP_opus_mt_ar_eo",
+            "model_name": "Helsinki_NLP_opus_mt_arb_eo",
             "special_tok": "eo"
         },
         "fr": {
-            "model_name": "Helsinki_NLP_opus_mt_ar_fr",
+            "model_name": "Helsinki_NLP_opus_mt_arb_fr",
             "special_tok": "fr"
         },
         "fra": {
-            "model_name": "Helsinki_NLP_opus_mt_ar_fr",
+            "model_name": "Helsinki_NLP_opus_mt_arb_fr",
             "special_tok": "fr"
         },
         "heb": {
-            "model_name": "Helsinki_NLP_opus_mt_ara_heb",
+            "model_name": "Helsinki_NLP_opus_mt_arb_heb",
             "special_tok": "heb"
         },
         "it": {
-            "model_name": "Helsinki_NLP_opus_mt_ar_it",
+            "model_name": "Helsinki_NLP_opus_mt_arb_it",
             "special_tok": "it"
         },
         "pl": {
-            "model_name": "Helsinki_NLP_opus_mt_ar_pl",
+            "model_name": "Helsinki_NLP_opus_mt_arb_pl",
             "special_tok": "pl"
         },
         "rus": {
-            "model_name": "Helsinki_NLP_opus_mt_ara_rus",
+            "model_name": "Helsinki_NLP_opus_mt_arb_rus",
             "special_tok": "rus"
         },
         "spa": {
-            "model_name": "Helsinki_NLP_opus_mt_ara_spa",
+            "model_name": "Helsinki_NLP_opus_mt_arb_spa",
             "special_tok": "spa"
         },
         "tur": {
-            "model_name": "Helsinki_NLP_opus_mt_ara_tur",
+            "model_name": "Helsinki_NLP_opus_mt_arb_tur",
             "special_tok": "tur"
         }
     },
     "de": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_de_ar",
+            "model_name": "Helsinki_NLP_opus_mt_de_arb",
             "special_tok": "ar"
         },
         "heb": {
-            "model_name": "Helsinki_NLP_opus_mt_de_he",
+            "model_name": "Helsinki_NLP_opus_mt_de_heb",
             "special_tok": "he"
         }
     },
     "el": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_el_ar",
+            "model_name": "Helsinki_NLP_opus_mt_el_arb",
             "special_tok": "ar"
         }
     },
     "ell": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_ell_ara",
+            "model_name": "Helsinki_NLP_opus_mt_ell_arb",
             "special_tok": "ara"
         }
     },
     "eng": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_en_ar",
+            "model_name": "Helsinki_NLP_opus_mt_eng_arb",
             "special_tok": "ar"
         },
         "heb": {
-            "model_name": "Helsinki_NLP_opus_mt_en_he",
+            "model_name": "Helsinki_NLP_opus_mt_eng_heb",
             "special_tok": "he"
         }
     },
     "eo": {
         "heb": {
-            "model_name": "Helsinki_NLP_opus_mt_eo_he",
+            "model_name": "Helsinki_NLP_opus_mt_eo_heb",
             "special_tok": "he"
         }
     },
     "es": {
         "heb": {
-            "model_name": "Helsinki_NLP_opus_mt_es_he",
+            "model_name": "Helsinki_NLP_opus_mt_es_heb",
             "special_tok": "he"
         }
     },
     "fi": {
         "heb": {
-            "model_name": "Helsinki_NLP_opus_mt_fi_he",
+            "model_name": "Helsinki_NLP_opus_mt_fi_heb",
             "special_tok": "he"
         }
     },
     "fr": {
         "heb": {
-            "model_name": "Helsinki_NLP_opus_mt_fr_he",
+            "model_name": "Helsinki_NLP_opus_mt_fr_heb",
             "special_tok": "he"
         }
     },
     "fra": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_fr_ar",
+            "model_name": "Helsinki_NLP_opus_mt_fr_arb",
             "special_tok": "ar"
         },
         "heb": {
-            "model_name": "Helsinki_NLP_opus_mt_fr_he",
+            "model_name": "Helsinki_NLP_opus_mt_fr_heb",
             "special_tok": "he"
         }
     },
     "heb": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_heb_ara",
+            "model_name": "Helsinki_NLP_opus_mt_heb_arb",
             "special_tok": "ara"
         },
         "de": {
-            "model_name": "Helsinki_NLP_opus_mt_he_de",
+            "model_name": "Helsinki_NLP_opus_mt_heb_de",
             "special_tok": "de"
         },
         "eo": {
-            "model_name": "Helsinki_NLP_opus_mt_he_eo",
+            "model_name": "Helsinki_NLP_opus_mt_heb_eo",
             "special_tok": "eo"
         },
         "fi": {
-            "model_name": "Helsinki_NLP_opus_mt_he_fi",
+            "model_name": "Helsinki_NLP_opus_mt_heb_fi",
             "special_tok": "fi"
         },
         "sv": {
-            "model_name": "Helsinki_NLP_opus_mt_he_sv",
+            "model_name": "Helsinki_NLP_opus_mt_heb_sv",
             "special_tok": "sv"
         }
     },
     "it": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_it_ar",
+            "model_name": "Helsinki_NLP_opus_mt_it_arb",
             "special_tok": "ar"
         }
     },
     "ita": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_ita_ara",
+            "model_name": "Helsinki_NLP_opus_mt_ita_arb",
             "special_tok": "ara"
         }
     },
     "jpn": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_jpn_ara",
+            "model_name": "Helsinki_NLP_opus_mt_jpn_arb",
             "special_tok": "ara"
         }
     },
     "pl": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_pl_ar",
+            "model_name": "Helsinki_NLP_opus_mt_pl_arb",
             "special_tok": "ar"
         }
     },
     "rus": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_rus_ara",
+            "model_name": "Helsinki_NLP_opus_mt_rus_arb",
             "special_tok": "ara"
         }
     },
     "spa": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_spa_ara",
+            "model_name": "Helsinki_NLP_opus_mt_spa_arb",
             "special_tok": "ara"
         }
     },
     "sv": {
         "heb": {
-            "model_name": "Helsinki_NLP_opus_mt_sv_he",
+            "model_name": "Helsinki_NLP_opus_mt_sv_heb",
             "special_tok": "he"
         }
     },
     "tur": {
         "arb": {
-            "model_name": "Helsinki_NLP_opus_mt_tur_ara",
+            "model_name": "Helsinki_NLP_opus_mt_tur_arb",
             "special_tok": "ara"
         }
     },
     "uk": {
         "heb": {
-            "model_name": "Helsinki_NLP_opus_mt_uk_he",
+            "model_name": "Helsinki_NLP_opus_mt_uk_heb",
             "special_tok": "he"
         }
     }

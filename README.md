@@ -18,25 +18,33 @@ Machine Translation RESTful API service. Based on Helsinki-NLP repository, and s
 - ita --> arb
 - jpn --> arb
 
-Process finished with exit code 0
-
 
 All models are stored in /trained_models/
 New models can be saved in that directory, and update translator_config.json accordingly.
 ## Building & Running 
 ### Docker
 #### build: 
+build base docker image (libraries, environment and dependencies) on online network
 ```bash
-sudo docker build . -t translation_image
+sudo docker build -f base.dockerfile -t translation_image_base .
 ```
+build application docker image on offline environment
+```bash
+sudo docker build -f app.dockerfile -t translation_image_app .
+```
+clean temp containers
+```bash
+sudo docker system prune
+```
+
 #### run:
 with gpu:
 ```bash
-sudo nvidia-docker run -p 8000:80 translation_image
+nvidia-docker run -p 8000:80 translation_image_app
 ```
 without gpu:
 ```bash
-sudo docker run -p 8000:80 translation_image
+docker run -p 8000:80 translation_image_app
 ```
 access via ```localhost:8000/docs```
 

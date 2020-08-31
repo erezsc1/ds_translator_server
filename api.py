@@ -61,27 +61,35 @@ def translate(
     :return: list[str]
     '''
     model_index = f"{source_lang}_{target_lang}"
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if model_index not in running_models.keys():
         # need to init model
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         running_models[model_index] = Translator(
             source_lang=source_lang,
             target_lang=target_lang,
             special_tokens=special_tokens
         )
-        running_models[model_index].to(device)
+    else: #model exists
+        if torch.cuda.is_available():
+            running_models[model_index].load_model_to_gpu()
+            running_models[model_index].to(device)
     translation_df = running_models[model_index].translate(data_list)
     api_logger.info(f"returned value to client: {translation_df['tgt_text'].tolist()}")
+    _free_model(model_index)
     return translation_df["tgt_text"].tolist()
+
+
+def _free_model(model_index):
+    running_models[model_index].to("cpu")
+    running_models[model_index].free_model_mem()
 
 
 @app.post("/free_model")
 def free_model(source_lang, target_lang):
     model_index = f"{source_lang}_{target_lang}"
     if model_index in running_models.keys():
-        running_models[model_index].to("cpu")
-        del running_models[model_index]
-        torch.cuda.empty_cache()
+        _free_model(model_index)
+
 
 @app.post("/empty_cache")
 def empty_cache():
